@@ -145,7 +145,7 @@ public class Nuage extends ListenerAdapter {
 
     private void quote(MessageReceivedEvent event) {
         if (quotes.isEmpty()) {
-            event.getMessage().reply("Oauis bah tu est gentil "+ event.getAuthor().getName() +" mais pas encore !").queue();
+            event.getMessage().reply("Oauis bah tu es gentil "+ event.getAuthor().getName() +" mais pas encore !").queue();
         } else {
             statsQuotes += 1;
             event.getChannel().sendMessage(quotes.get(ran.nextInt(quotes.size()))).queue();
@@ -156,7 +156,7 @@ public class Nuage extends ListenerAdapter {
         String response = "Je suis en version "+ VERSION+"\n";
         response = response.concat("Je me suis démarré "+ dateStart.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)+"\n");
         event.getMessage().reply(response + "Il y a "+quotes.size() +" citations," +
-                " et on me les a demande " + statsQuotes + " fois").queue();
+                " et on me les a demandé " + statsQuotes + " fois").queue();
     }
 
     private void reload(MessageReceivedEvent event) {
@@ -167,7 +167,7 @@ public class Nuage extends ListenerAdapter {
                     queries.size() + " responses rechargées"
             ).queue();
         } else {
-            event.getMessage().reply("Je te connait pas toi, tu n'est pas mon papa "+ event.getAuthor().getName() +" !").queue();
+            event.getMessage().reply("Je te connait pas toi, tu n'es pas mon papa "+ event.getAuthor().getName() +" !").queue();
         }
     }
 
